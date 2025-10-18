@@ -1,0 +1,93 @@
+/* 기본 스타일 및 변수 */
+:root {
+    --bg-color: #1c1c2e;
+    --primary-color: #2e2e48;
+    --accent-color: #8a7ff7;
+    --text-color: #e0e0e0;
+    --text-secondary-color: #a0a0b8;
+    --border-color: #3c3c54;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121212;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- 공통 레이아웃 --- */
+.app-container {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.content-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-bottom: 70px;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 40px 24px;
+}
+
+/* --- 공통 콘텐츠 스타일 --- */
+header {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+p {
+    font-size: 1rem;
+    color: var(--text-secondary-color);
+}
+
+/* --- 데스크탑 공통 레이아웃 --- */
+@media (min-width: 768px) {
+    .app-container {
+        flex-direction: row;
+    }
+
+    .content-container {
+        padding-bottom: 0;
+    }
+
+    .screen {
+        padding: 50px;
+        text-align: left;
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+}

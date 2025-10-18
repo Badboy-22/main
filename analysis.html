@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nightly - 수면 분석</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages/analysis.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <nav class="side-nav">
+            <h2>Nightly 🌙</h2>
+            <a href="index.html" class="nav-button">홈</a>
+            <a href="sleep.html" class="nav-button">수면</a>
+            <a href="analysis.html" class="nav-button">분석</a>
+            <a href="my-info.html" class="nav-button">내 정보</a>
+        </nav>
+
+        <main class="content-container">
+            <section id="analysis-screen" class="screen">
+                <header>
+                    <h2>수면 분석</h2>
+                    <p>기록된 날짜를 클릭하여 상세 내용을 확인하세요.</p>
+                </header>
+
+                <div class="calendar">
+                    <div class="calendar-header">
+                        <button id="prev-month-btn">◀</button>
+                        <span id="current-month-year"></span>
+                        <button id="next-month-btn">▶</button>
+                    </div>
+                    <div class="calendar-days">
+                        <div>일</div>
+                        <div>월</div>
+                        <div>화</div>
+                        <div>수</div>
+                        <div>목</div>
+                        <div>금</div>
+                        <div>토</div>
+                    </div>
+                    <div class="calendar-grid" id="calendar-grid">
+                    </div>
+                </div>
+
+                <div class="monthly-summary" id="monthly-summary">
+                    <h3>이번 달 요약</h3>
+                    <div class="summary-grid">
+                        <div>
+                            <span>평균 수면 시간</span>
+                            <strong id="avg-sleep-time">--시간 --분</strong>
+                        </div>
+                        <div>
+                            <span>잠의 컨디션</span>
+                            <strong id="sleep-condition-summary">--</strong>
+                        </div>
+                        <div>
+                            <span>낮 활동 컨디션</span>
+                            <strong id="day-condition-summary">--</strong>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-button">홈</a>
+            <a href="sleep.html" class="nav-button">수면</a>
+            <a href="analysis.html" class="nav-button">분석</a>
+            <a href="my-info.html" class="nav-button">내 정보</a>
+        </nav>
+    </div>
+
+    <div class="modal-container" id="record-detail-modal">
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <h2 id="modal-record-date"></h2>
+            <div class="sleep-duration-display" style="margin-bottom: 20px;">
+                <span>총 수면 시간</span>
+                <strong id="modal-total-sleep-time"></strong>
+            </div>
+            <div id="modal-record-details">
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/pages/analysis.js" defer></script>
+</body>
+
+</html>

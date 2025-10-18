@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nightly - 좋은 아침!</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages/wake-up.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <main class="content-container">
+            <section id="wake-up-screen" class="screen">
+                <header>
+                    <h2 id="wakeup-title">좋은 아침이에요!</h2>
+                    <p>어젯밤 수면은 어떠셨나요?</p>
+                </header>
+
+                <div class="sleep-duration-display" id="auto-duration-display">
+                    <span>총 수면 시간</span>
+                    <strong id="total-sleep-time">--시간 --분</strong>
+                </div>
+
+                <div class="manual-time-input hidden" id="manual-input-display">
+                    <div class="time-input-group">
+                        <label for="start-time-input">잠든 시간</label>
+                        <input type="datetime-local" id="start-time-input" class="edit-mode">
+                    </div>
+                    <div class="time-input-group">
+                        <label for="end-time-input">일어난 시간</label>
+                        <input type="datetime-local" id="end-time-input" class="edit-mode">
+                    </div>
+                </div>
+
+                <h3 class="selector-title">자는 동안 어땠나요?</h3>
+                <div class="tag-selector" data-limit="2">
+                    <button class="tag-button">바로 잠들지 못함 😵‍💫</button>
+                    <button class="tag-button">잠을 여러 번 깸 🥱</button>
+                    <button class="tag-button">꿈을 꿈 🏞️</button>
+                    <button class="tag-button">몸을 많이 뒤척임 🤸</button>
+                </div>
+
+                <h3 class="selector-title">일어난 직후 컨디션은?</h3>
+                <div class="tag-selector" data-limit="2">
+                    <button class="tag-button">개운함 ✨</button>
+                    <button class="tag-button">한번에 일어남 💪🏻</button>
+                    <button class="tag-button">눈을 뜨기 힘듦 😪</button>
+                    <button class="tag-button">알람을 못 들음 🔇</button>
+                    <button class="tag-button">몸이 찌뿌둥함 😫</button>
+                </div>
+
+                <button class="cta-button" id="save-record-btn">기록 저장하기</button>
+            </section>
+        </main>
+    </div>
+    <script src="js/pages/wake-up.js" defer></script>
+</body>
+
+</html>

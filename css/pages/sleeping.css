@@ -1,0 +1,79 @@
+body {
+    background-color: var(--bg-color);
+}
+
+.sleeping-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    color: var(--text-color);
+}
+
+.message-box {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#sleep-message {
+    font-size: 1.2rem;
+    color: var(--text-secondary-color);
+}
+
+#timer-display {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-top: 10px;
+    letter-spacing: 2px;
+}
+
+#wake-up-btn {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* 뒤로가기 버튼 스타일 */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: var(--text-secondary-color);
+    text-decoration: none;
+    font-size: 1rem;
+    z-index: 10;
+}
+
+/* 하단 버튼 그룹 스타일 */
+.wakeup-buttons {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* 수동 기록 버튼(secondary-button) 스타일 */
+.secondary-button {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary-color);
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: 500;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.secondary-button:hover {
+    background-color: var(--primary-color);
+    border-color: var(--accent-color);
+}

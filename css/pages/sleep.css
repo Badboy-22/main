@@ -1,0 +1,152 @@
+/* --- 탭 UI 스타일 --- */
+.sleep-tabs {
+    display: flex;
+    background-color: var(--primary-color);
+    border-radius: 12px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.sleep-tab-link {
+    flex: 1;
+    padding: 12px;
+    background: none;
+    border: none;
+    color: var(--text-secondary-color);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.sleep-tab-link.active {
+    background-color: var(--accent-color);
+    color: #fff;
+    font-weight: 700;
+}
+
+.sleep-tab-content {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+.sleep-tab-content.active {
+    display: block;
+}
+
+/* --- 컨디션 맵 UI 스타일 --- */
+.mood-map-container {
+    display: flex;
+    margin-top: 10px;
+}
+
+.y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-right: 10px;
+    text-align: right;
+    font-size: 0.9rem;
+    color: var(--text-secondary-color);
+}
+
+.mood-map-grid {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    /* 5단계로 변경 */
+    gap: 5px;
+    height: 300px;
+    /* 높이 조정 */
+    background-color: var(--primary-color);
+    padding: 5px;
+    border-radius: 12px;
+}
+
+.map-cell {
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+
+    /* ▼▼▼ 여러 칩을 정렬하기 위해 flexbox 속성 추가 ▼▼▼ */
+    display: flex;
+    flex-wrap: wrap;
+    /* 칩들이 공간을 넘어가면 다음 줄로 자동 줄바꿈 */
+    align-content: flex-start;
+    /* 칩들을 위쪽부터 정렬 */
+    gap: 4px;
+    /* 칩들 사이의 간격 */
+    padding: 4px;
+    /* 셀 내부 여백 */
+}
+
+.map-cell:hover {
+    background-color: var(--border-color);
+}
+
+.log-chip {
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: white;
+    font-weight: 500;
+}
+
+/* 컨디션별 칩 색상 */
+.chip-매우좋음 {
+    background-color: #58c47b;
+}
+
+.chip-좋음 {
+    background-color: var(--accent-color);
+}
+
+.chip-보통 {
+    background-color: #636363;
+}
+
+.chip-나쁨 {
+    background-color: #c49d58;
+}
+
+.chip-매우나쁨 {
+    background-color: #e86363;
+}
+
+.x-axis {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 90px;
+    /* y-axis 너비에 맞게 조정 */
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--text-secondary-color);
+}
+
+.x-axis .axis-label {
+    flex: 1;
+    text-align: center;
+}
+
+/* --- 추천 요약 섹션 스타일 --- */
+.recommendation-summary {
+    background-color: var(--primary-color);
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 30px;
+    border-left: 5px solid var(--accent-color);
+}
+
+.recommendation-summary h4 {
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.recommendation-summary p {
+    color: var(--text-secondary-color);
+    line-height: 1.6;
+}

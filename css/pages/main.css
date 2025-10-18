@@ -1,0 +1,61 @@
+/* index.html(메인 화면) 전용 스타일 */
+
+/* --- 메인 화면 정보 카드 스타일 --- */
+.info-cards-container {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* 카드 사이의 간격 */
+}
+
+.info-card {
+    background-color: var(--primary-color);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: left;
+}
+
+.info-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.info-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary-color);
+}
+
+/* --- 오늘의 수면 목표 카드 스타일 --- */
+.recommendation-card {
+    background: var(--primary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.recommendation-card h2 {
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+    color: var(--text-secondary-color);
+}
+
+.recommendation-card p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* --- 데스크탑 화면에서의 정보 카드 스타일 --- */
+@media (min-width: 768px) {
+    .info-cards-container {
+        max-width: 600px;
+        align-self: center;
+        /* 가운데 정렬 */
+    }
+}

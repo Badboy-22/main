@@ -1,0 +1,72 @@
+/* analysis.html 페이지 전용 스타일 */
+
+/* 기록이 있는 날짜 셀 스타일 */
+.day.has-record {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+    font-weight: bold;
+}
+
+.day.has-record:hover {
+    border: 2px solid white;
+}
+
+.day .date-number {
+    text-align: right;
+}
+
+.day .sleep-time {
+    font-size: 0.8rem;
+    font-weight: 500;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    padding: 2px 4px;
+}
+
+/* 월별 통계 요약 스타일 */
+.monthly-summary {
+    background-color: var(--primary-color);
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.summary-grid span {
+    display: block;
+    color: var(--text-secondary-color);
+    font-size: 0.9rem;
+}
+
+.summary-grid strong {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+/* 상세보기 모달 내부 스타일 */
+#modal-record-details h4 {
+    color: var(--text-secondary-color);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+}
+
+#modal-record-details ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+#modal-record-details li {
+    margin-bottom: 5px;
+}

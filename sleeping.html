@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nightly - 수면 중...</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages/sleeping.css">
+</head>
+
+<body>
+    <a href="sleep.html" class="back-button">← 뒤로가기</a>
+
+    <div class="sleeping-container">
+        <div class="message-box">
+            <p id="sleep-message">수면 시간을 측정하고 있습니다...</p>
+            <h2 id="timer-display">00:00:00</h2>
+        </div>
+
+        <div class="wakeup-buttons">
+            <button class="cta-button" id="wake-up-btn">일어났어요!</button>
+            <button class="secondary-button" id="manual-log-btn">타이머를 잊었나요? (수동 기록)</button>
+        </div>
+    </div>
+
+    <script src="js/pages/sleeping.js" defer></script>
+</body>
+
+</html>

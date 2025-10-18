@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nightly - 수면 시작</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages/sleep.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <nav class="side-nav">
+            <h2>Nightly 🌙</h2>
+            <a href="index.html" class="nav-button">홈</a>
+            <a href="sleep.html" class="nav-button">수면</a>
+            <a href="analysis.html" class="nav-button">분석</a>
+            <a href="my-info.html" class="nav-button">내 정보</a>
+        </nav>
+
+        <main class="content-container">
+            <section id="sleep-screen" class="screen">
+                <header>
+                    <h2>수면 준비</h2>
+                    <p>오늘 하루 컨디션을 기록해주세요~</p>
+                </header>
+
+                <div class="sleep-tabs">
+                    <button class="sleep-tab-link active" data-tab="day-review">오늘 하루는?</button>
+                    <button class="sleep-tab-link" data-tab="pre-sleep">잠들기 전에는?</button>
+                </div>
+
+                <div class="sleep-tab-content-container">
+                    <div class="sleep-tab-content active" id="day-review">
+                        <h3 class="selector-title">컨디션 맵에 오늘 하루를 기록하세요~</h3>
+                        <div class="mood-map-container">
+                            <div class="y-axis">
+                                <div class="axis-label">매우 좋음 😊</div>
+                                <div class="axis-label">좋음 🙂</div>
+                                <div class="axis-label">보통 😐</div>
+                                <div class="axis-label">나쁨 😟</div>
+                                <div class="axis-label">매우 나쁨 😫</div>
+                            </div>
+
+                            <div class="mood-map-grid">
+                            </div>
+
+                        </div>
+                        <div class="x-axis">
+                            <div class="axis-label">오전</div>
+                            <div class="axis-label">오후</div>
+                            <div class="axis-label">저녁</div>
+                        </div>
+                    </div>
+
+                    <div class="sleep-tab-content" id="pre-sleep">
+                        <h3 class="selector-title">오늘의 감정 (최대 3개 선택 가능)</h3>
+                        <div class="tag-selector" data-limit="3">
+                            <button class="tag-button">행복 ❤️</button>
+                            <button class="tag-button">편안 ☺️</button>
+                            <button class="tag-button">기쁨 ☀️</button>
+                            <button class="tag-button">만족 🌈</button>
+                            <button class="tag-button">불안 😖</button>
+                            <button class="tag-button">슬픔 😭</button>
+                            <button class="tag-button">피곤 😴</button>
+                            <button class="tag-button">신남 😆</button>
+                            <button class="tag-button">스트레스 😫</button>
+                        </div>
+
+                        <h3 class="selector-title">취침 2시간 이내 활동 (최대 5개 선택 가능)</h3>
+                        <div class="tag-selector" data-limit="5">
+                            <button class="tag-button">독서 📚</button>
+                            <button class="tag-button">일기 📝</button>
+                            <button class="tag-button">핸드폰 📱</button>
+                            <button class="tag-button">TV 📺</button>
+                            <button class="tag-button">게임 🎮</button>
+                            <button class="tag-button">업무/공부 ✍️</button>
+                            <button class="tag-button">산책 🚶‍♂️</button>
+                            <button class="tag-button">운동 🏋️‍♀️</button>
+                            <button class="tag-button">스트레칭 🧘</button>
+                            <button class="tag-button">커피 ☕️</button>
+                            <button class="tag-button">야식 🍕</button>
+                            <button class="tag-button">낮잠 😴</button>
+                            <button class="tag-button">샤워 🚿</button>
+                        </div>
+
+                        <h3 class="selector-title">몸 상태 (최대 2개 선택 가능)</h3>
+                        <div class="tag-selector" data-limit="2">
+                            <button class="tag-button">피로 😫</button>
+                            <button class="tag-button">소화불량 🤢</button>
+                            <button class="tag-button">감기 🤧</button>
+                            <button class="tag-button">두통 🤕</button>
+                            <button class="tag-button">신체통증 💪</button>
+                        </div>
+
+                        <h3 class="selector-title">상황 (최대 1개 선택 가능)</h3>
+                        <div class="tag-selector" data-limit="1">
+                            <button class="tag-button">시험 📚</button>
+                            <button class="tag-button">밤샘 🦉</button>
+                            <button class="tag-button">시차적응 ✈️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recommendation-summary">
+                    <h4>💡 오늘의 수면 분석 및 추천</h4>
+                    <p id="recommendation-text">오늘 하루 컨디션을 기록하면 수면 추천을 받을 수 있어요.</p>
+                    <p id="ai-feedback"></p>
+                </div>
+
+                <button class="cta-button" id="start-sleep-btn">수면 시작하기</button>
+            </section>
+
+            <div class="modal-container" id="activity-log-modal">
+                <div class="modal-content">
+                    <button class="modal-close-btn">&times;</button>
+                    <h2 id="modal-title"></h2>
+                    <div class="setting-group">
+                        <h3 class="setting-title">무엇을 하고 있었나요?</h3>
+                        <div id="log-activity-selector" class="tag-selector" data-limit="1">
+                            <button class="tag-button">공부</button>
+                            <button class="tag-button">휴식</button>
+                            <button class="tag-button">운동</button>
+                            <button class="tag-button">식사</button>
+                            <button class="tag-button">기타</button>
+                        </div>
+                    </div>
+                    <button class="cta-button" id="save-activity-log-btn">기록하기</button>
+                </div>
+            </div>
+        </main>
+
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-button">홈</a>
+            <a href="sleep.html" class="nav-button">수면</a>
+            <a href="analysis.html" class="nav-button">분석</a>
+            <a href="my-info.html" class="nav-button">내 정보</a>
+        </nav>
+    </div>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/pages/sleep.js" defer></script>
+</body>
+
+</html>

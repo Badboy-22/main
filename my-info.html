@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nightly - 페이지 제목</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <link rel="stylesheet" href="css/pages/my-info.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <nav class="side-nav">
+            <h2>Nightly 🌙</h2>
+
+            <a href="index.html" class="nav-button">홈</a>
+            <a href="sleep.html" class="nav-button">수면</a>
+            <a href="analysis.html" class="nav-button">분석</a>
+            <a href="my-info.html" class="nav-button">내 정보</a>
+        </nav>
+
+        <main class="content-container">
+            <section id="my-info-screen" class="screen">
+                <header>
+                    <h2>내 정보</h2>
+                </header>
+
+                <form id="profile-form">
+                    <div class="profile-field">
+                        <label for="nickname">닉네임</label>
+                        <div class="field-content">
+                            <span class="view-mode" id="view-nickname">사용자</span>
+                            <input type="text" id="edit-nickname" class="edit-mode hidden" maxlength="10">
+                        </div>
+                    </div>
+
+                    <div class="profile-field">
+                        <label for="birthdate">생년월일</label>
+                        <div class="field-content">
+                            <span class="view-mode" id="view-birthdate">2000-01-01</span>
+                            <input type="date" id="edit-birthdate" class="edit-mode hidden">
+                        </div>
+                    </div>
+
+                    <div class="profile-field">
+                        <label for="gender">성별</label>
+                        <div class="field-content">
+                            <span class="view-mode" id="view-gender">선택 안 함</span>
+                            <select id="edit-gender" class="edit-mode hidden">
+                                <option value="남성">남성</option>
+                                <option value="여성">여성</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="profile-buttons">
+                        <button type="button" id="edit-profile-btn" class="cta-button">프로필 수정</button>
+                        <button type="submit" id="save-profile-btn" class="cta-button hidden">저장</button>
+                        <button type="button" id="cancel-edit-btn" class="secondary-button hidden">취소</button>
+                    </div>
+                </form>
+
+                <div class="menu-list logout-section">
+                    <button class="menu-item logout-btn">로그아웃</button>
+                </div>
+
+                <script src="my-info.js"></script>
+            </section>
+        </main>
+
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-button">홈</a>
+            <a href="sleep.html" class="nav-button">수면</a>
+            <a href="analysis.html" class="nav-button">분석</a>
+            <a href="my-info.html" class="nav-button">내 정보</a>
+        </nav>
+    </div>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/pages/my-info.js" defer></script>
+</body>
+
+</html>
