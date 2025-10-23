@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   sleepMessage.textContent = "수면 시간을 측정하고 있습니다...";
 
   // 카운트업 타이머 시작
-  let elapsedSeconds = 3600 * 5;
+  let elapsedSeconds = 0;
   const timerInterval = setInterval(() => {
     elapsedSeconds++;
     const hours = Math.floor(elapsedSeconds / 3600);

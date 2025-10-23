@@ -13,10 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const startTimeInput = document.getElementById('start-time-input');
     const endTimeInput = document.getElementById('end-time-input');
     const saveRecordBtn = document.getElementById('save-record-btn');
-
-    // URL 파라미터 확인
-    const urlParams = new URLSearchParams(window.location.search);
-    const mode = urlParams.get('mode');
+    const mode = new URLSearchParams(window.location.search).get('mode'); // URL 파라미터 확인
 
     // '수동 입력 모드'일 경우
     if (mode === 'manual') {
